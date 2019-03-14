@@ -1,1 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
+
+#sign-out-button {
+  display: none;
+  text-align: left;
+}
+
+#change-password-form {
+  display: none;
+  text-align: left;
+}
+
+#user-message {
+  display: none;
+}
+
+#sign-up-form {
+  text-align: left;
+}
+
+#sign-in-form {
+  text-align: left;
+}

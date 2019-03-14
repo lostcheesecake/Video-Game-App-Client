@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Video Game Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <h1>Video Game Review</h1>
+
+  <p id="message"></p>
+  <button id="get-reviews-form" value="get reviews" type="button">Show Reviews</button>
+  <button id="updateReview" value="update reviews" type="button">Update Review</button>
+
+  <form id="sign-up-form" class="border">
+    <fieldset>
+      <legend>Sign Up</legend>
+      <input type="email" placeholder="email" name="credentials[email]">
+      <input type="password" placeholder="password" name="credentials[password]">
+      <input type="password" placeholder="password_confirmation" name="credentials[password_confirmation]">
+      <input type="submit" value="sign-up">
+    </fieldset>
+  </form>
+
+  <form id="sign-in-form" class="border">
+    <fieldset>
+      <legend>Sign In</legend>
+      <input type="email" placeholder="email" name="credentials[email]">
+      <input type="password" placeholder="password" name="credentials[password]">
+      <input type="submit" value="sign-in">
+    </fieldset>
+  </form>
+
+
+  <form id="change-password-form" class="Change Password">
+    <fieldset>
+      <legend>Change Password</legend>
+      <input type="password" placeholder="old password" name="passwords[old]">
+      <input type="password" placeholder="new password" name="passwords[new]">
+      <input type="submit" value="Change Password">
+    </fieldset>
+  </form>
+
+  <button id="sign-out-button">Sign Out</button>
+  <div id="reviews-display" class="content"></div>
+</body>
+
 </html>

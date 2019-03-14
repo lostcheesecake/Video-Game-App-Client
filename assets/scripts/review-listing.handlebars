@@ -1,0 +1,12 @@
+{{#each reviews as |review|}}
+
+  <section class ="review" data-id="{{review.id}}">
+    <h2>
+      {{review.video_game}}
+    </h2>
+    <p>
+      {{review.text}}
+    </p>
+    <button data-id={{review.id}} value="delete reviews" class="delete-button" type="button">Delete Review</button>
+  </section>
+{{/each}}
