@@ -18,14 +18,20 @@
 
   <p id="message"></p>
   <button id="get-reviews-form" value="get reviews" type="button">Show Reviews</button>
-  <button id="updateReview" value="update reviews" type="button">Update Review</button>
+
+  <form class="create" id="create-review-form">
+    <input required type="text" name="review[video_game]" placeholder="Video Game Title">
+    <input required type="text" name="review[text]" placeholder="Write a Review">
+    <button type="submit">Create a Review</button>
+  </form>
+
 
   <form id="sign-up-form" class="border">
     <fieldset>
       <legend>Sign Up</legend>
-      <input type="email" placeholder="email" name="credentials[email]">
-      <input type="password" placeholder="password" name="credentials[password]">
-      <input type="password" placeholder="password_confirmation" name="credentials[password_confirmation]">
+      <input required type="email" placeholder="email" name="credentials[email]">
+      <input required type="password" placeholder="password" name="credentials[password]">
+      <input required type="password" placeholder="password_confirmation" name="credentials[password_confirmation]">
       <input type="submit" value="sign-up">
     </fieldset>
   </form>
@@ -33,8 +39,8 @@
   <form id="sign-in-form" class="border">
     <fieldset>
       <legend>Sign In</legend>
-      <input type="email" placeholder="email" name="credentials[email]">
-      <input type="password" placeholder="password" name="credentials[password]">
+      <input required type="email" placeholder="email" name="credentials[email]">
+      <input required type="password" placeholder="password" name="credentials[password]">
       <input type="submit" value="sign-in">
     </fieldset>
   </form>
@@ -43,8 +49,8 @@
   <form id="change-password-form" class="Change Password">
     <fieldset>
       <legend>Change Password</legend>
-      <input type="password" placeholder="old password" name="passwords[old]">
-      <input type="password" placeholder="new password" name="passwords[new]">
+      <input required type="password" placeholder="old password" name="passwords[old]">
+      <input required type="password" placeholder="new password" name="passwords[new]">
       <input type="submit" value="Change Password">
     </fieldset>
   </form>

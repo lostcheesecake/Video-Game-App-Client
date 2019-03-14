@@ -9,4 +9,19 @@
     </p>
     <button data-id={{review.id}} value="delete reviews" class="delete-button" type="button">Delete Review</button>
   </section>
+
+  <form data-id="{{review.id}}" class="update-review-form">
+    <input type="text" name="review[text]" placeholder="updateReview">
+    <button type="submit">Update Review</button>
+  </form>
+
+
+  <!--
+    <form id="sign-in-form" class="border">
+        <input type="email" placeholder="email" name="credentials[email]">
+        <input type="password" placeholder="password" name="credentials[password]">
+        <input type="submit" value="sign-in">
+    </form> -->
+
+
 {{/each}}

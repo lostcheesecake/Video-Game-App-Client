@@ -9,9 +9,34 @@ const getReviewsSuccess = (data) => {
   const showReviewsHtml = reviewListing({ reviews: data.reviews })
   $('#reviews-display').html(showReviewsHtml)
 }
-const getReviewsFailure = (e) => {
-  console.log(e)
+const getReviewsFailure = () => {
   $('#message').text('Error on Show Reviews')
+}
+
+const deleteReviewSuccess = () => {
+  $('#reviews-display').empty()
+}
+
+const deleteReviewFailure = () => {
+  $('#message').text('YOU DON\'T OWN THIS REVIEW')
+}
+
+const createReviewSuccess = (data) => {
+  console.log(data)
+  const showReviewsHtml = reviewListing({ reviews: data.reviews })
+  $('#reviews-display').html(showReviewsHtml)
+  $('form').trigger('reset')
+}
+const createReviewFailure = () => {
+  $('#message').text('Error on Create Review')
+}
+
+const updateReviewSuccess = () => {
+  $('form').trigger('reset')
+}
+
+const updateReviewFailure = () => {
+  $('#message').text('Error on Update Review')
 }
 
 const signUpSuccess = function (data) {
@@ -50,6 +75,9 @@ const signInSuccess = function (data) {
   $('#change-password-form').show()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
+  $('#create-review-form').show()
+  $('#get-reviews-form').show()
+  $('#update-review-form').show()
 }
 
 const signInFailure = function () {
@@ -123,5 +151,11 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   getReviewsSuccess,
-  getReviewsFailure
+  getReviewsFailure,
+  createReviewSuccess,
+  createReviewFailure,
+  deleteReviewSuccess,
+  deleteReviewFailure,
+  updateReviewSuccess,
+  updateReviewFailure
 }
