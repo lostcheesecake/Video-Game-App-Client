@@ -6,7 +6,6 @@ const signUp = function (data) {
     url: config.apiUrl + '/sign-up',
     method: 'POST',
     data
-    // data: data
   })
 }
 
@@ -59,16 +58,31 @@ const deleteReview = (reviewId) => {
   })
 }
 
-const updateReview = (bookId) => {
+const createReview = data => {
+  console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/reviews/' + bookId,
-    method: 'PATCH'
+    url: config.apiUrl + '/reviews',
+    method: 'POST',
+    headers: { Authorization: 'Token token=' + store.user.token },
+    data
+  })
+}
+
+const updateReview = (data, reviewId) => {
+  return $.ajax({
+    url: config.apiUrl + '/reviews/' + reviewId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
 module.exports = {
   getReviews,
   deleteReview,
   updateReview,
+  createReview,
   signUp,
   signIn,
   signOut,
