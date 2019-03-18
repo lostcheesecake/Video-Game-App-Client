@@ -5,7 +5,6 @@ const reviewListing = require('./review-listing.handlebars')
 const store = require('./store')
 
 const getReviewsSuccess = (data) => {
-  console.log(data)
   const showReviewsHtml = reviewListing({
     reviews: data.reviews
   })
@@ -30,7 +29,6 @@ const deleteReviewFailure = () => {
 }
 
 const createReviewSuccess = (data) => {
-  console.log(data)
   const showReviewsHtml = reviewListing({
     reviews: data.reviews
   })
@@ -49,7 +47,7 @@ const updateReviewFailure = () => {
   $('#message').text('Error on Update Review')
 }
 
-const signUpSuccess = function(data) {
+const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -60,7 +58,7 @@ const signUpSuccess = function(data) {
   }, 2000)
 }
 
-const signUpFailure = function() {
+const signUpFailure = function () {
   $('#message').text('Error on Sign Up')
   $('#message').removeClass()
   $('#message').addClass('failure')
@@ -71,7 +69,7 @@ const signUpFailure = function() {
   }, 2000)
 }
 
-const signInSuccess = function(data) {
+const signInSuccess = function (data) {
   $('#message').text('Signed in successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -88,9 +86,10 @@ const signInSuccess = function(data) {
   $('#create-review-form').show()
   $('#get-reviews-form').show()
   $('#update-review-form').show()
+  $('#reviews-display').show()
 }
 
-const signInFailure = function() {
+const signInFailure = function () {
   $('#message').text('Error on Sign In')
   $('#message').removeClass()
   $('#message').addClass('failure')
@@ -101,24 +100,27 @@ const signInFailure = function() {
   }, 2000)
 }
 
-const signOutSuccess = function() {
+const signOutSuccess = function () {
   $('#message').text('Signed out successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('form').trigger('reset')
-  $('input').trigger('reset')
   $('#sign-out-button').hide()
   $('#change-password-form').hide()
   $('#user-message').hide()
+  $('#create-review-form').hide()
+  $('#get-reviews-form').hide()
+  $('#reviews-display').hide()
   $('#sign-up-form').show()
   $('#sign-in-form').show()
+  $('form').trigger('reset')
+  $('input').trigger('reset')
   setTimeout(() => {
     $('#message').text('')
   }, 2000)
   store.user = null
 }
 
-const signOutFailure = function() {
+const signOutFailure = function () {
   $('#message').text('Error on Sign Out')
   $('#message').removeClass()
   $('#message').addClass('failure')
@@ -129,7 +131,7 @@ const signOutFailure = function() {
   }, 2000)
 }
 
-const changePasswordSuccess = function() {
+const changePasswordSuccess = function () {
   $('#message').text('Changed password successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -140,7 +142,7 @@ const changePasswordSuccess = function() {
   }, 2000)
 }
 
-const changePasswordFailure = function() {
+const changePasswordFailure = function () {
   $('#message').text('Error on Change Password')
   $('#message').removeClass()
   $('#message').addClass('failure')

@@ -14,7 +14,6 @@ const signIn = function (data) {
     url: config.apiUrl + '/sign-in',
     method: 'POST',
     data
-    // data: data
   })
 }
 
@@ -29,7 +28,6 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
-  console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -37,7 +35,6 @@ const changePassword = function (data) {
       Authorization: 'Token token=' + store.user.token
     },
     data
-    // data: data
   })
 }
 
@@ -59,7 +56,6 @@ const deleteReview = (reviewId) => {
 }
 
 const createReview = data => {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/reviews',
     method: 'POST',
