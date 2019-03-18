@@ -1,6 +1,6 @@
 #Video Game App
 
-# BACK END
+# FRONT END
 # Full Stack Project Practice
 
 
@@ -16,6 +16,16 @@ had played, and also see how others feel about other video games.
 front end respository: https://github.com/lostcheesecake/Video-Game-App-Client
 Website: https://lostcheesecake.github.io/Video-Game--Review-App/
 back end: https://dashboard.heroku.com/apps/video-game-review-app
+
+## Technologies
+
+- bootstrap
+- html
+- scss
+- css
+- javascript
+- rails
+- ruby
 
 ## Write between 3-5 user stories
 
