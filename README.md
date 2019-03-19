@@ -73,6 +73,11 @@ Please create a wireframe of your planned front end.
 https://imgur.com/7gciWzn
 ```
 
+## Problems I had
+
+I wanted to create another table for Video Games but it didn't end up working,
+so that will be my next step.
+
 ## Timetable
 
 Write a basic timetable for yourself, you don't have to stick to it but it
