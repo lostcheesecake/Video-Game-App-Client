@@ -13,7 +13,7 @@ I created a video games review application that I will be adding more features
 in the future. It allows a user to add their own review to a video game they
 had played, and also see how others feel about other video games.
 ```
-front end respository: https://github.com/lostcheesecake/Video-Game-App-Client
+Back End respository: https://github.com/lostcheesecake/Video-Game-Review-App
 Website: https://lostcheesecake.github.io/Video-Game--Review-App/
 back end: https://dashboard.heroku.com/apps/video-game-review-app
 
