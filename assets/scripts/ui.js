@@ -53,7 +53,7 @@ const updateReviewSuccess = () => {
 }
 
 const updateReviewFailure = () => {
-  $('input').trigger('reset')
+  $('form').trigger('reset')
   setTimeout(() => {
     $('#message').text('')
   }, 2000)
