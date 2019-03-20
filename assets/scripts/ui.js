@@ -11,17 +11,20 @@ const getReviewsSuccess = (data) => {
   $('#reviews-display').html(showReviewsHtml)
 }
 const getReviewsFailure = () => {
+  $('form').trigger('reset')
   $('#message').text('Error on Show Reviews')
 }
 
 const deleteReviewSuccess = () => {
+  $('form').trigger('reset')
   $('#reviews-display').empty()
   setTimeout(() => {
-    $('#message').text('Delete successful!')
+    $('#message').text('Delete Successful!')
   }, 2000)
 }
 
 const deleteReviewFailure = () => {
+  $('form').trigger('reset')
   $('#message').text('YOU DON\'T OWN THIS REVIEW')
   setTimeout(() => {
     $('#message').text('')
@@ -36,19 +39,27 @@ const createReviewSuccess = (data) => {
   $('form').trigger('reset')
 }
 const createReviewFailure = () => {
-  $('#message').text('Error on Create Review')
+  $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').text('Error on Create Review')
+  }, 2000)
 }
 
 const updateReviewSuccess = () => {
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').text('Successfully Updated Review')
+  }, 2000)
 }
 
 const updateReviewFailure = () => {
-  $('#message').text('Error on Update Review')
+  setTimeout(() => {
+    $('#message').text('Error on Update Review')
+  }, 2000)
 }
 
 const signUpSuccess = function (data) {
-  $('#message').text('Signed up successfully')
+  $('#message').text('Signed Up Successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('form').trigger('reset')
@@ -70,7 +81,7 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully!')
+  $('#message').text('Signed In Successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('form').trigger('reset')
@@ -101,7 +112,7 @@ const signInFailure = function () {
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Signed out successfully!')
+  $('#message').text('Signed Out Successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#sign-out-button').hide()
@@ -132,7 +143,7 @@ const signOutFailure = function () {
 }
 
 const changePasswordSuccess = function () {
-  $('#message').text('Changed password successfully!')
+  $('#message').text('Changed Password Successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('form').trigger('reset')
