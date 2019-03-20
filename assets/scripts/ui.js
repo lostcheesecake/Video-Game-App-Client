@@ -53,8 +53,9 @@ const updateReviewSuccess = () => {
 }
 
 const updateReviewFailure = () => {
+  $('input').trigger('reset')
   setTimeout(() => {
-    $('#message').text('Error on Update Review')
+    $('#message').text('')
   }, 2000)
 }
 
