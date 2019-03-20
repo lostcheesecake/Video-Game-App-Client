@@ -17,7 +17,7 @@ const getReviewsFailure = () => {
 const deleteReviewSuccess = () => {
   $('#reviews-display').empty()
   setTimeout(() => {
-    $('#message').text('')
+    $('#message').text('Delete successful!')
   }, 2000)
 }
 
