@@ -38,6 +38,18 @@
   display: none;
 }
 
+#get-consoles-form {
+  display: none;
+}
+
+#create-console-form {
+  display: none;
+}
+
+#consoles-display {
+  display: none;
+}
+
 h1 {
   text-align: center;
   font-family: serif;
@@ -52,4 +64,5 @@ legend {
 
 form {
   border-radius: 10px;
+  margin: 12px;
 }

@@ -1,0 +1,17 @@
+{{#each consoles as |console|}}
+
+  <section class ="console" data-id="{{console.id}}">
+    <h2>
+      {{console.system}}
+    </h2>
+    <p>
+      {{console.text}}
+    </p>
+    <button data-id={{console.id}} value="delete consoles" class="delete-button" type="button">Delete Console</button>
+  </section>
+
+  <form data-id="{{console.id}}" class="update-console-form">
+    <input type="text" name="console[text]" placeholder="updateConsole">
+    <button type="submit">Update Console</button>
+  </form>
+{{/each}}

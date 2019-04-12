@@ -1,10 +1,13 @@
 'use strict'
 
 const reviewListing = require('./review-listing.handlebars')
+const consoleListing = require('./console-listing.handlebars')
 
 const store = require('./store')
 
 const getReviewsSuccess = (data) => {
+  $('#consoles-display').hide()
+  $('#reviews-display').show()
   const showReviewsHtml = reviewListing({
     reviews: data.reviews
   })
@@ -18,8 +21,9 @@ const getReviewsFailure = () => {
 const deleteReviewSuccess = () => {
   $('form').trigger('reset')
   $('#reviews-display').empty()
+  $('#message').text('Delete Successful!')
   setTimeout(() => {
-    $('#message').text('Delete Successful!')
+    $('#message').text('')
   }, 2000)
 }
 
@@ -55,6 +59,64 @@ const updateReviewSuccess = () => {
 const updateReviewFailure = () => {
   $('form').trigger('reset')
   $('#message').text('Error on Update Review')
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
+}
+
+const getConsolesSuccess = (data) => {
+  $('#reviews-display').hide()
+  $('#consoles-display').show()
+  const showConsolesHtml = consoleListing({
+    consoles: data.consoles
+  })
+  $('#consoles-display').html(showConsolesHtml)
+}
+const getConsolesFailure = () => {
+  $('form').trigger('reset')
+  $('#message').text('Error on Show Consoles')
+}
+
+const deleteConsoleSuccess = () => {
+  $('form').trigger('reset')
+  $('#consoles-display').empty()
+  setTimeout(() => {
+    $('#message').text('Delete Successful!')
+  }, 2000)
+}
+
+const deleteConsoleFailure = () => {
+  $('form').trigger('reset')
+  $('#message').text('YOU DON\'T OWN THIS REVIEW')
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
+}
+
+const createConsoleSuccess = (data) => {
+  const showConsolesHtml = consoleListing({
+    consoles: data.consoles
+  })
+  $('#consoles-display').html(showConsolesHtml)
+  $('form').trigger('reset')
+}
+const createConsoleFailure = () => {
+  $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').text('Error on Create Console')
+  }, 2000)
+}
+
+const updateConsoleSuccess = () => {
+  $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').text('Successfully Updated Console')
+  }, 2000)
+}
+
+const updateConsoleFailure = () => {
+  $('form').trigger('reset')
+  $('#message').text('Error on Update Console')
   setTimeout(() => {
     $('#message').text('')
   }, 2000)
@@ -100,6 +162,10 @@ const signInSuccess = function (data) {
   $('#get-reviews-form').show()
   $('#update-review-form').show()
   $('#reviews-display').show()
+  $('#consoles-display').show()
+  $('#create-console-form').show()
+  $('#get-consoles-form').show()
+  $('#update-console-form').show()
 }
 
 const signInFailure = function () {
@@ -123,6 +189,9 @@ const signOutSuccess = function () {
   $('#create-review-form').hide()
   $('#get-reviews-form').hide()
   $('#reviews-display').hide()
+  $('#create-console-form').hide()
+  $('#get-consoles-form').hide()
+  $('#consoles-display').hide()
   $('#sign-up-form').show()
   $('#sign-in-form').show()
   $('form').trigger('reset')
@@ -182,5 +251,13 @@ module.exports = {
   deleteReviewSuccess,
   deleteReviewFailure,
   updateReviewSuccess,
-  updateReviewFailure
+  updateReviewFailure,
+  getConsolesSuccess,
+  getConsolesFailure,
+  createConsoleSuccess,
+  createConsoleFailure,
+  deleteConsoleSuccess,
+  deleteConsoleFailure,
+  updateConsoleSuccess,
+  updateConsoleFailure
 }
