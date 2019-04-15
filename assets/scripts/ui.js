@@ -80,8 +80,9 @@ const getConsolesFailure = () => {
 const deleteConsoleSuccess = () => {
   $('form').trigger('reset')
   $('#consoles-display').empty()
+  $('#message').text('Delete Successful!')
   setTimeout(() => {
-    $('#message').text('Delete Successful!')
+    $('#message').text('')
   }, 2000)
 }
 

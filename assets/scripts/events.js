@@ -41,7 +41,6 @@ const onUpdateReview = (event) => {
 }
 
 const onGetConsoles = (event) => {
-  console.log('onGetConsoles')
   if (event) { event.preventDefault() }
   api.getConsoles()
     .then(ui.getConsolesSuccess)
