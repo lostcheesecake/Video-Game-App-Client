@@ -40,6 +40,41 @@ const onUpdateReview = (event) => {
     .catch(ui.updateReviewFailure)
 }
 
+const onGetConsoles = (event) => {
+  if (event) { event.preventDefault() }
+  api.getConsoles()
+    .then(ui.getConsolesSuccess)
+    .catch(ui.getConsolesFailure)
+}
+
+const onDeleteConsole = (event) => {
+  event.preventDefault()
+  const consoleId = $(event.target).data('id')
+  api.deleteConsole(consoleId)
+    .then(ui.deleteConsoleSuccess)
+    .then(onGetConsoles)
+    .catch(ui.deleteConsoleFailure)
+}
+
+const onCreateConsole = () => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.createConsole(data)
+    .then(ui.createConsoleSuccess)
+    .then(onGetConsoles)
+    .catch(ui.createConsoleFailure)
+}
+
+const onUpdateConsole = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const consoleId = $(event.target).data('id')
+  api.updateReview(data, consoleId)
+    .then(ui.updateConsoleSuccess)
+    .then(onGetConsoles)
+    .catch(ui.updateConsoleFailure)
+}
+
 const onSignUp = function (event) {
   event.preventDefault()
 
@@ -75,13 +110,19 @@ const onChangePassword = function (event) {
 
 const addHandlers = () => {
   $('#get-reviews-form').on('click', onGetReviews)
-  $('#reviews-display').on('click', '.delete-button', onDeleteReview)
   $('#create-review-form').on('submit', onCreateReview)
-  $('#reviews-display').on('submit', '.update-review-form', onUpdateReview)
+  $('#create-console-form').on('submit', onCreateConsole)
+  $('#get-consoles-form').on('click', onGetConsoles)
+
   $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out-button').on('click', onSignOut)
+
+  $('#reviews-display').on('submit', '.update-review-form', onUpdateReview)
+  $('#consoles-display').on('click', '.delete-button', onDeleteConsole)
+  $('#consoles-display').on('submit', '.update-review-form', onUpdateConsole)
+  $('#reviews-display').on('click', '.delete-button', onDeleteReview)
 }
 
 module.exports = {
@@ -89,5 +130,9 @@ module.exports = {
   onDeleteReview,
   onCreateReview,
   onUpdateReview,
+  onGetConsoles,
+  onDeleteConsole,
+  onCreateConsole,
+  onUpdateConsole,
   addHandlers
 }
