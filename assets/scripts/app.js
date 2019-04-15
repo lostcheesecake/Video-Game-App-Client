@@ -9,5 +9,6 @@ const events = require('./events')
 
 $(() => {
   $('#getReviews').on('click', events.onGetReviews)
+  $('#getConsoles').on('click', events.onGetConsoles)
   events.addHandlers()
 })

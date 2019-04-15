@@ -18,45 +18,46 @@
 
   <p id="message"></p>
   <button id="get-reviews-form" value="get reviews" type="button">Show Reviews</button>
-
   <form class="create" id="create-review-form">
     <input required type="text" name="review[video_game]" placeholder="Video Game Title">
     <input required type="text" name="review[text]" placeholder="Write a Review">
     <button type="submit">Create a Review</button>
   </form>
 
+  <button id="get-consoles-form" value="get consoles" type="button">Show Consoles</button>
+  <form class="create" id="create-console-form">
+    <input required type="text" name="console[system]" placeholder="Game Console">
+    <input required type="text" name="console[text]" placeholder="Write a Review">
+    <button type="submit">Create a Review</button>
+  </form>
+
 
   <form id="sign-up-form" class="border">
-    <fieldset>
-      <legend>Sign Up</legend>
-      <input required type="email" placeholder="email" name="credentials[email]">
-      <input required type="password" placeholder="password" name="credentials[password]">
-      <input required type="password" placeholder="password_confirmation" name="credentials[password_confirmation]">
-      <input type="submit" value="sign-up">
-    </fieldset>
+    <legend>Sign Up</legend>
+    <input required type="email" placeholder="email" name="credentials[email]">
+    <input required type="password" placeholder="password" name="credentials[password]">
+    <input required type="password" placeholder="confirm password" name="credentials[password_confirmation]">
+    <input type="submit" value="sign-up">
   </form>
 
   <form id="sign-in-form" class="border">
-    <fieldset>
-      <legend>Sign In</legend>
-      <input required type="email" placeholder="email" name="credentials[email]">
-      <input required type="password" placeholder="password" name="credentials[password]">
-      <input type="submit" value="sign-in">
-    </fieldset>
+    <legend>Sign In</legend>
+    <input required type="email" placeholder="email" name="credentials[email]">
+    <input required type="password" placeholder="password" name="credentials[password]">
+    <input type="submit" value="sign-in">
   </form>
 
 
   <form id="change-password-form" class="Change Password">
-    <fieldset>
-      <legend>Change Password</legend>
-      <input required type="password" placeholder="old password" name="passwords[old]">
-      <input required type="password" placeholder="new password" name="passwords[new]">
-      <input type="submit" value="Change Password">
-    </fieldset>
+    <legend>Change Password</legend>
+    <input required type="password" placeholder="old password" name="passwords[old]">
+    <input required type="password" placeholder="new password" name="passwords[new]">
+    <input type="submit" value="Change Password">
   </form>
 
   <button id="sign-out-button">Sign Out</button>
   <div id="reviews-display" class="content"></div>
+  <div id="consoles-display" class="content"></div>
 </body>
 
 </html>

@@ -14,7 +14,6 @@ const signIn = function (data) {
     url: config.apiUrl + '/sign-in',
     method: 'POST',
     data
-    // data: data
   })
 }
 
@@ -29,7 +28,6 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
-  console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -37,7 +35,6 @@ const changePassword = function (data) {
       Authorization: 'Token token=' + store.user.token
     },
     data
-    // data: data
   })
 }
 
@@ -59,7 +56,6 @@ const deleteReview = (reviewId) => {
 }
 
 const createReview = data => {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/reviews',
     method: 'POST',
@@ -78,11 +74,54 @@ const updateReview = (data, reviewId) => {
     data
   })
 }
+
+const getConsoles = () => {
+  return $.ajax({
+    url: config.apiUrl + '/consoles',
+    method: 'GET'
+  })
+}
+
+const deleteConsole = (consoleId) => {
+  return $.ajax({
+    url: config.apiUrl + '/consoles/' + consoleId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const createConsole = data => {
+  console.log(data)
+  return $.ajax({
+    url: config.apiUrl + '/consoles',
+    method: 'POST',
+    headers: { Authorization: 'Token token=' + store.user.token },
+    data
+  })
+}
+
+const updateConsole = (data, consoleId) => {
+  return $.ajax({
+    url: config.apiUrl + '/consoles/' + consoleId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   getReviews,
   deleteReview,
   updateReview,
   createReview,
+  getConsoles,
+  deleteConsole,
+  updateConsole,
+  createConsole,
   signUp,
   signIn,
   signOut,

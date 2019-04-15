@@ -11,17 +11,7 @@
   </section>
 
   <form data-id="{{review.id}}" class="update-review-form">
-    <input type="text" name="review[text]" placeholder="updateReview">
+    <input required type="text" name="review[text]" placeholder="updateReview">
     <button type="submit">Update Review</button>
   </form>
-
-
-  <!--
-    <form id="sign-in-form" class="border">
-        <input type="email" placeholder="email" name="credentials[email]">
-        <input type="password" placeholder="password" name="credentials[password]">
-        <input type="submit" value="sign-in">
-    </form> -->
-
-
 {{/each}}
