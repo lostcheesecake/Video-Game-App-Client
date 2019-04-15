@@ -40,7 +40,11 @@ const createReviewSuccess = (data) => {
     reviews: data.reviews
   })
   $('#reviews-display').html(showReviewsHtml)
+  $('#message').text('Successfully Created a Review!')
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
 }
 const createReviewFailure = () => {
   $('form').trigger('reset')
@@ -51,8 +55,9 @@ const createReviewFailure = () => {
 
 const updateReviewSuccess = () => {
   $('form').trigger('reset')
+  $('#message').text('Successfully Updated Review')
   setTimeout(() => {
-    $('#message').text('Successfully Updated Review')
+    $('#message').text('')
   }, 2000)
 }
 
@@ -99,7 +104,11 @@ const createConsoleSuccess = (data) => {
     consoles: data.consoles
   })
   $('#consoles-display').html(showConsolesHtml)
+  $('#message').text('Successfully Created a Review!')
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
 }
 const createConsoleFailure = () => {
   $('form').trigger('reset')
@@ -109,9 +118,11 @@ const createConsoleFailure = () => {
 }
 
 const updateConsoleSuccess = () => {
+  console.log()
   $('form').trigger('reset')
+  $('#message').text('Successfully Updated Console')
   setTimeout(() => {
-    $('#message').text('Successfully Updated Console')
+    $('#message').text('')
   }, 2000)
 }
 

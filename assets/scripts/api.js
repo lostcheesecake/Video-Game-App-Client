@@ -93,7 +93,6 @@ const deleteConsole = (consoleId) => {
 }
 
 const createConsole = data => {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/consoles',
     method: 'POST',
@@ -101,7 +100,6 @@ const createConsole = data => {
     data
   })
 }
-
 const updateConsole = (data, consoleId) => {
   return $.ajax({
     url: config.apiUrl + '/consoles/' + consoleId,

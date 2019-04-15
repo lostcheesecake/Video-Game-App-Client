@@ -69,7 +69,7 @@ const onUpdateConsole = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   const consoleId = $(event.target).data('id')
-  api.updateReview(data, consoleId)
+  api.updateConsole(data, consoleId)
     .then(ui.updateConsoleSuccess)
     .then(onGetConsoles)
     .catch(ui.updateConsoleFailure)
@@ -121,7 +121,7 @@ const addHandlers = () => {
 
   $('#reviews-display').on('submit', '.update-review-form', onUpdateReview)
   $('#consoles-display').on('click', '.delete-button', onDeleteConsole)
-  $('#consoles-display').on('submit', '.update-review-form', onUpdateConsole)
+  $('#consoles-display').on('submit', '.update-console-form', onUpdateConsole)
   $('#reviews-display').on('click', '.delete-button', onDeleteReview)
 }
 
